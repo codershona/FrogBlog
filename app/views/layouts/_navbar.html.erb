@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Makeup & Cosmetics</a>
+  <%= link_to 'Frog Beauty Blogs', root_path, class: "nav-link #{yield(:blog_active)}" %>
+  <!-- <a class="navbar-brand" href="#">Makeup & Cosmetics</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <%= link_to 'Blog', root_path, class: "nav-link #{yield(:blog_active)}" %>
+        <%= link_to 'Blog', blog_path, class: "nav-link #{yield(:blog_active)}" %>
         <!-- <a class="nav-link" href="#">Perfumn Collections <span class="sr-only">(current)</span></a> -->
       </li>
       <li class="nav-item">
@@ -18,6 +19,12 @@
       </li>
       <li class="nav-item">
          <%= link_to 'Contact', contact_path, class: "nav-link #{yield(:contact_active)}" %>
+
+        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+      </li>
+
+            <li class="nav-item">
+         <%= link_to 'My posts', author_posts_path, class: "nav-link #{yield(:author)}" %>
 
         <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
       </li>
