@@ -1,7 +1,7 @@
-class BlogController < ActionController::Base
-	protect_from_forgery with: :exception
+class BlogController < ApplicationController
+end	
 
-	def blog
+	# def blog
 
-	end
-end
+	# end
+
