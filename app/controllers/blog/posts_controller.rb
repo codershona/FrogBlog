@@ -1,4 +1,6 @@
-class PostsController < ApplicationController
+module Blog
+  class PostsController < BlogController
+
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
@@ -72,3 +74,7 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :body, :description, :slug, :banner_image_url)
     end
 end
+
+
+end
+
