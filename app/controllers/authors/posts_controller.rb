@@ -12,7 +12,7 @@ module Authors
   # GET /posts/1
   # GET /posts/1.json
   def show
-  end
+end
 
   # GET /posts/new
   def new
@@ -23,6 +23,7 @@ module Authors
   def edit
   end
 
+ 
   # POST /posts
   # POST /posts.json
   def create
