@@ -11,32 +11,42 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-
+    
     <div class="field">
     <%= f.label :banner_image_url %>
     <%= f.text_field :banner_image_url %>
   </div>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="field">
+     <br>
+       <div class="field">
     <%= f.label :slug %>
     <%= f.text_field :slug %>
   </div>
+    <br>
+    <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
 
-  <div class="actions">
+ 
+
+  </div>
+    </div>
+    <div class="col-md-9">
+       <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+    </div>
+  </div>
+  <br>
+ <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 <% end %>
