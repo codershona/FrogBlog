@@ -49,6 +49,10 @@
 
 .posts.edit, .posts.new {
 	.card{
+    .card-block {
+    background-color: $gray;
+    }
+
 	.card-title {
 	 font-family: Arial Black;
 	font-size: 31px;
@@ -56,8 +60,11 @@
 	margin-bottom: 6px;
 	padding-top: 13px;
 	}
-	.card-body {
-    height: 60px;
+	.card-block {
+    height: 80px;
+}
+     hr {
+	margin: 0;
 }
 	.list-group-item {
 	padding: 10px;
@@ -65,12 +72,16 @@
 	border-right: 0;
 	input[type='text'], textarea {
 	font-size: 14px;
-	width: 240px;
+	width: 260px;
+	background-color: $light-gray;
 	  }
 
 	  textarea {
 	  height: 100px;
-	  width: 250px;
+	  width: 254px;
+	  }
+	  &:last-child {
+	  background-color: $light-gray; 
 	  }
 
 	  }
