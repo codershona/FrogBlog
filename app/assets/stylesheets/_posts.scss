@@ -49,11 +49,31 @@
 
 .posts.edit, .posts.new {
 	.card{
+	.card-title {
+	 font-family: Arial Black;
+	font-size: 31px;
+	margin-left: 50px;
+	margin-bottom: 6px;
+	padding-top: 13px;
+	}
+	.card-body {
+    height: 60px;
+}
 	.list-group-item {
 	padding: 10px;
 	border-left: 0;
 	border-right: 0;
-	}
+	input[type='text'], textarea {
+	font-size: 14px;
+	width: 240px;
+	  }
+
+	  textarea {
+	  height: 100px;
+	  width: 250px;
+	  }
+
+	  }
 	}
 }
 
