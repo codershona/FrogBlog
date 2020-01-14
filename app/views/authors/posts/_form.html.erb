@@ -57,7 +57,12 @@
       </div>
     </li>
       </ul>
+        <% if @post.persisted? %>
+    <%= link_to 'Show', @post %> |
+    <% end %>
+<%= link_to 'Back', authors_posts_path %>
     </div>
+
       
    <div class="col-md-8">
          <div class="field">
