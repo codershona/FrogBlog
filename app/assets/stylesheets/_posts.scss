@@ -47,7 +47,15 @@
   }
 }
 
-
+.posts.edit, .posts.new {
+	.card{
+	.list-group-item {
+	padding: 10px;
+	border-left: 0;
+	border-right: 0;
+	}
+	}
+}
 
 @media screen and (min-width: 34em) {
 	.posts.index .card {
