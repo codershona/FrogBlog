@@ -1,32 +1,43 @@
 module Authors
   class PostsController < AuthorController
 
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.most_recent
+    @posts = current_author.posts.most_recent
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-  end
+end
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = current_author.posts.new
   end
 
   # GET /posts/1/edit
   def edit
   end
 
+  def publish
+    @post.publish
+  redirect_to authors_posts_url
+  end
+
+  def unpublish
+    @post.unpublish
+   redirect_to authors_posts_url
+  end
+
+ 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_author.posts.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -44,7 +55,7 @@ module Authors
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to authors_posts_path(@post), notice: 'Post was successfully updated.' }
+        format.html { redirect_to authors_post_path(@post), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -66,7 +77,7 @@ module Authors
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
-      @post = Post.friendly.find(params[:id])  #
+      @post = current_author.posts.friendly.find(params[:id]) 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

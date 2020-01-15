@@ -6,7 +6,16 @@ Rails.application.routes.draw do
 
 
 	namespace :authors do
-    resources :posts
+		get '/account' => 'accounts#edit', as: :accounts
+		put '/info' => 'accounts#update_info', as: :info
+        put '/change_password' => 'accounts#change_password', as: :change_password
+
+         resources :posts do
+
+         put 'publish' => 'posts#publish', on: :member
+
+          put 'unpublish' => 'posts#unpublish', on: :member
+         end
      end
 
 	scope module: 'blog' do
@@ -15,8 +24,6 @@ Rails.application.routes.draw do
 	get 'contact' => 'pages#contact', as: :contact
 	get 'posts' => 'posts#index', as: :posts
 	get 'posts/:id' => 'posts#show', as: :post
-	
-   # 'posts/jimbob' => params[:favourite_cat] == 'jimbob'
 
 	end
   

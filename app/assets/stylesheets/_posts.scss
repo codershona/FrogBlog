@@ -1,4 +1,7 @@
 .posts.index {
+
+
+
 	  .card {
 	border: none;
 	border-radius: 0;
@@ -11,6 +14,8 @@
 	background-size: cover;
 	background-position: center;
 	}
+
+
 	  .card-block {
 	padding: 10px;
 	  .btn-read {
@@ -47,7 +52,47 @@
   }
 }
 
+.posts.edit, .posts.new {
+	.card{
+    .card-block {
+    background-color: $gray;
+    }
 
+	.card-title {
+	 font-family: Arial Black;
+	font-size: 31px;
+	margin-left: 50px;
+	margin-bottom: 6px;
+	padding-top: 13px;
+	}
+	.card-block {
+    height: 80px;
+}
+     hr {
+	margin: 0;
+}
+	.list-group-item {
+	padding: 10px;
+	border-left: 0;
+	border-right: 0;
+	input[type='text'], textarea {
+	font-size: 14px;
+	width: 260px;
+	background-color: $light-gray;
+	  }
+
+	  textarea {
+	  height: 100px;
+	  width: 254px;
+	  }
+	  &:last-child {
+	  background-color: $light-gray; 
+	     }
+	
+
+	  }
+	}
+}
 
 @media screen and (min-width: 34em) {
 	.posts.index .card {
