@@ -6,7 +6,9 @@
     # GET /posts
     # GET /posts.json
     def index
-     @posts = Post.most_recent.published 
+      ## perform a paginated query:
+      #  @posts = Post
+     @posts = Post.most_recent.published.paginate(page: params[:page], per_page: 3) 
     end
 
     # GET /posts/1
